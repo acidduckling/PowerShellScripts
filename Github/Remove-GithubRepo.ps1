@@ -3,20 +3,20 @@
 function Remove-GithubRepo {
     param(
         [Parameter(Mandatory=$true)]
-        [string] $repo
+        [string] $Repo
     )
 
-    $confirmation = Read-Host "Are you sure you want to delete the $repo repository from GitHub?"
+    $confirmation = Read-Host "Are you sure you want to delete the $Repo repository from GitHub?"
     if ($confirmation.ToLower() -eq 'y') {
 
         $creds = getCredentialsFromSettings
     
-        $response = makeDeleteRequest -url "https://api.github.com/repos/$($creds.Username)/$repo" -token $creds.GetNetworkCredential().Password
+        $response = makeDeleteRequest -url "https://api.github.com/repos/$($creds.Username)/$Repo" -token $creds.GetNetworkCredential().Password
 
         if($response.StatusCode -eq 204) {
-            Write-Output "Successfully deleted $repo"
+            Write-Output "Successfully deleted $Repo"
         } else {
-            Write-Output "There was an error deleting $repo"
+            Write-Output "There was an error deleting $Repo"
         }
     }
 }
