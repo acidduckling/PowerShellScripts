@@ -1,0 +1,1 @@
+$settingsPath = ".\Github\githubsettings.json"
