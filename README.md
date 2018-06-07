@@ -8,7 +8,8 @@ First use **Set-GithubToken** to save the credentials for your github repo acces
 Note: Auth uses basic token authentication, so you will need to configure an auth token first in GitHub
 
 ### Importing the Gitbub Module
-Copy the 
+Copy the Github folder to a path defined in your **PSModulesPath** env variable.
+The run 
 
 ### Set-GithubToken
 This will save your settings to a githubsettings.json file, with the token stored as a secure string. ALl the other functions will utilise the stored credentials
